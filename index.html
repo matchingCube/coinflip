@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip A Coin</title>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+</head>
+<body>
+    <h1 id="message" style="display:none;">-50 Credits</h1>
+    <div class="container">
+        <div class="stats">
+            <p id="heads-count">Phant: 0</p>
+            <p id="tails-count">Project: 0</p>
+        </div>
+        <div class="coin" id="coin">
+            <div class="heads">
+                <img loading="lazy" src="head.png">
+            </div>
+            <div class="tails">
+                <img loading="lazy" src="tails.png">
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="angry-grid">
+                <div id="item-0">
+                    <button style="width: 115%;" id="heads-button" class="selected-button">
+                        Phant
+                    </button>
+                </div>
+                <div id="item-1" >
+                    <button style="width: 80%;margin-left: 20%;" id="tails-button">
+                        Project
+                    </button>
+                </div>
+                <div id="item-25" style="width: 133.33%;">
+                    <button id="btn-25" onclick="selectBet(25)" style="width: 90%; height: 65%;" class="amount-button selected-button">
+                        25 Credits
+                    </button>
+                </div>
+                <!--<div id="item-3">
+                    <button id="btn-100" onclick="selectBet(100)" style="width: 90%" class="amount-button">
+                        100 Credits
+                    </button>
+                </div>-->
+                <div id="item-4" style="width: 120%; margin-left:-24%">
+                    <button id="btn-250" onclick="selectBet(250)" style="width: 90%; height: 65%;" class="amount-button">
+                        250 Credits
+                    </button>
+                </div>
+                <div id="item-5" style="width: 115%; margin-left:-10%">
+                    <button id="btn-500" onclick="selectBet(500)" style="width: 90%; height: 65%;" class="amount-button">
+                        500 Credits
+                    </button>
+                </div>
+                <div id="item-6" style="width: 133.33%;">
+                    <button id="btn-750" onclick="selectBet(750)" style="width: 90%; height: 65%;" class="amount-button">
+                        750 Credits
+                    </button>
+                </div>
+                <!--<div id="item-7">
+                    <button id="btn-1500" onclick="selectBet(1500)" style="width: 90%" class="amount-button">
+                        1500 Credits
+                    </button>
+                </div>-->
+                <div id="item-8" style="width: 120%; margin-left:-24%">
+                    <button id="btn-3000" onclick="selectBet(3000)" style="width: 90%; height: 65%;" class="amount-button">
+                        3000 Credits
+                    </button>
+                </div>
+                <div id="item-9" style="width: 115%; margin-left:-10%">
+                    <button id="btn-6000" onclick="selectBet(6000)" style="width: 90%; height: 65%;" class="amount-button">
+                        6000 Credits
+                    </button>
+                </div>
+                <div id="item-10">
+                    <button style="width: 97.5%" id="flip-button">
+                        Flip Chip
+                    </button>
+                </div>
+              </div>
+
+
+        </div>
+    </div>
+    <!--Script-->
+    <script src="script.js"></script>
+    <style>
+        .angry-grid {
+           display: grid; 
+        
+           grid-template-rows: 1fr 1fr 1fr 1fr;
+           grid-template-columns: 1fr 1fr 1fr 1fr;
+           
+           gap: 0px;
+           height: 100%;
+           width: 90%;
+        }
+          
+        #item-0 {
+        
+           grid-row-start: 1;
+           grid-column-start: 1;
+        
+           grid-row-end: 2;
+           grid-column-end: 3;
+           
+        }
+        #item-1 {
+        
+           grid-row-start: 1;
+           grid-column-start: 3;
+        
+           grid-row-end: 2;
+           grid-column-end: 5;
+           
+        }
+        #item-2 {
+        
+           grid-row-start: 2;
+           grid-column-start: 1;
+        
+           grid-row-end: 3;
+           grid-column-end: 2;
+           
+        }
+        #item-3 {
+        
+           grid-row-start: 2;
+           grid-column-start: 2;
+        
+           grid-row-end: 3;
+           grid-column-end: 3;
+           
+        }
+        #item-4 {
+        
+           grid-row-start: 2;
+           grid-column-start: 3;
+        
+           grid-row-end: 3;
+           grid-column-end: 4;
+           
+        }
+        #item-5 {
+        
+           grid-row-start: 2;
+           grid-column-start: 4;
+        
+           grid-row-end: 3;
+           grid-column-end: 5;
+           
+        }
+        #item-6 {
+        
+           grid-row-start: 3;
+           grid-column-start: 1;
+        
+           grid-row-end: 4;
+           grid-column-end: 2;
+           
+        }
+        #item-7 {
+        
+           grid-row-start: 3;
+           grid-column-start: 2;
+        
+           grid-row-end: 4;
+           grid-column-end: 3;
+           
+        }
+        #item-8 {
+        
+           grid-row-start: 3;
+           grid-column-start: 3;
+        
+           grid-row-end: 4;
+           grid-column-end: 4;
+           
+        }
+        #item-9 {
+        
+           grid-row-start: 3;
+           grid-column-start: 4;
+        
+           grid-row-end: 4;
+           grid-column-end: 5;
+           
+        }
+        #item-10 {
+        
+           grid-row-start: 4;
+           grid-column-start: 1;
+        
+           grid-row-end: 5;
+           grid-column-end: 5;
+           
+        }
+        </style>
+</body>
+</html>
